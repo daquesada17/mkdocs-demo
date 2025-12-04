@@ -4,9 +4,7 @@ This page presents a simple architecture diagram using Mermaid to illustrate a b
 
 ```mermaid
 architecture-beta
-    group api(cloud)[AWS]erDiagram
-    "This ❤ Unicode"
-
+    group api(cloud)[AWS]
 
     service db(database)[Database] in api
     service disk1(disk)[Storage] in api
