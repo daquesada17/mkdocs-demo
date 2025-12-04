@@ -3,12 +3,19 @@
 This page presents a simple architecture diagram using Mermaid to illustrate a basic web application flow.
 
 ```mermaid
-flowchart TD
-  A[Client (Browser)] -->|HTTPS| B[Web Server / CDN]
-  B --> C[Backend API]
-  C --> D[(Database)]
-  C --> E[(Cache)]
-  C --> F[External Service]
+architecture-beta
+    group api(cloud)[AWS]erDiagram
+    "This ❤ Unicode"
+
+
+    service db(database)[Database] in api
+    service disk1(disk)[Storage] in api
+    service disk2(disk)[Storage] in api
+    service server(server)[Server] in api
+
+    db:L -- R:server
+    disk1:T -- B:server
+    disk2:T -- B:db
 ```
 
 - **Client (Browser)**: End user accessing the app.
